@@ -50,7 +50,8 @@ class SudokuGrid:
         :return: La grille de Sudoku correspondant à la ligne donnée par l'utilisateur
         :rtype: SudokuGrid
         """
-        raise NotImplementedError()
+	u=int(input("Saisissez la ligne de grille"))
+	return(SudokuGrid(u))
 
     def __str__(self):
         """À COMPLÉTER!
