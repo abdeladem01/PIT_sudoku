@@ -13,8 +13,11 @@ class SudokuGrid:
 	for i in range(9):
 		for j in range(9):
 			try:
-				self.L[i][j] = int(initial_values_str[k])
-				k += 1
+				if int(initial_values_str)>=0 and int(initial_values_str)<10:
+					self.L[i][j] = int(initial_values_str[k])
+					k += 1
+				else:
+					raise ValueError()
 			except:
 				raise ValueError('Ne peut être convertie en grille')
 	return self.L
