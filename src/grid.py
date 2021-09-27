@@ -4,27 +4,23 @@ class SudokuGrid:
     """Cette classe représente une grille de Sudoku.
     Toutes ces méthodes sont à compléter en vous basant sur la documentation fournie en docstring.
     """
-
-    def __init__(self, initial_values_str):
-       
-
-	self.L= [[0 for i in range(9)] for i in range (9)]
-	k = 0
-	for i in range(9):
-		for j in range(9):
-			try:
-				if int(initial_values_str)>=0 and int(initial_values_str)<10:
-					self.L[i][j] = int(initial_values_str[k])
-					k += 1
-				else:
-					raise ValueError()
-			except:
-				raise ValueError('Ne peut être convertie en grille')
-	return self.L
+	def __init__(self, initial_values_str):
+   		self.L= [[0 for i in range(9)] for i in range (9)]
+		k = 0
+		for i in range(9):
+			for j in range(9):
+				try:
+					if int(initial_values_str)>=0 and int(initial_values_str)<10:
+						self.L[i][j] = int(initial_values_str[k])
+						k += 1
+					else:
+						raise ValueError()
+				except:
+					raise ValueError('Ne peut être convertie en grille')
+		return self.L
 	
-
     @staticmethod
-    def from_file(filename, line):
+	def from_file(filename, line):
         """À COMPLÉTER!
         Cette méthode de classe (ou méthode statique) crée une nouvelle instance de grille de Sudoku
         à partir d'une ligne contenue dans un fichier.
@@ -36,13 +32,13 @@ class SudokuGrid:
         :return: La grille de Sudoku correspondant à la ligne donnée dans le fichier donné
         :rtype: SudokuGrid
         """
-	fichier=open(filename,"r")
-	texte=fichier.readlines()
-	u=texte[line]
-	return(SudokuGrid(u))
+		fichier=open(filename,"r")
+		texte=fichier.readlines()
+		u=texte[line]
+		return(SudokuGrid(u))
 
     @staticmethod
-    def from_stdin():
+	def from_stdin():
         """À COMPLÉTER!
         Cette méthode de classe crée une nouvelle instance de grille de Sudoku
         à partir d'une ligne lu depuis l'entrée standard (saisie utilisateur).
@@ -59,7 +55,16 @@ class SudokuGrid:
         :return: Une chaîne de caractère (sur plusieurs lignes...) représentant la grille
         :rtype: str
         """
-        raise NotImplementedError()
+		sortie=""
+		if not self.L:
+			return "pas de grille"
+		else:
+			for i in self.L:
+				sortie+=str(i)+"\n"
+			return sortie
+	
+
+			
 
     def get_row(self, i):
         """À COMPLÉTER!
