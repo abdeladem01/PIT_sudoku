@@ -36,13 +36,7 @@ class SudokuGrid:
 	fichier=open(filename,"r")
 	texte=fichier.readlines()
 	u=texte[line]
-	l=[]
-	for i in range(9):
-		k=[]
-		for j in range(9):
-			k.append(u[i*j])
-		l.append(k)
-	return(l)
+	return(SudokuGrid(u)
 
     @staticmethod
     def from_stdin():
