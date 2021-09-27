@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "export PATH=./src:$PATH" >> "~/.bashrc"
+echo "export PATH=./src:$PATH" >> ~/.bashrc
