@@ -39,7 +39,7 @@ class SudokuGrid:
 	fichier=open(filename,"r")
 	texte=fichier.readlines()
 	u=texte[line]
-	return(SudokuGrid(u)
+	return(SudokuGrid(u))
 
     @staticmethod
     def from_stdin():
