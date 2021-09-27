@@ -14,6 +14,7 @@ class SudokuGrid:
             où ``0`` indique une case vide
         :type initial_values_str: str
         """
+		
         raise NotImplementedError()
 
     @staticmethod
@@ -29,7 +30,16 @@ class SudokuGrid:
         :return: La grille de Sudoku correspondant à la ligne donnée dans le fichier donné
         :rtype: SudokuGrid
         """
-        raise NotImplementedError()
+	fichier=open(filename,"r")
+	texte=fichier.readlines()
+	u=texte[line]
+	l=[]
+	for i in range(9):
+		k=[]
+		for j in range(9):
+			k.append(u[i*j])
+		l.append(k)
+	return(l)
 
     @staticmethod
     def from_stdin():
@@ -118,3 +128,4 @@ class SudokuGrid:
         :rtype: SudokuGrid
         """
         raise NotImplementedError()
+g=from_file("/home/pbridon/python/git_sudo/PIT_sudoku",0)
