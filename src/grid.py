@@ -6,16 +6,14 @@ class SudokuGrid:
     """
 
     def __init__(self, initial_values_str):
-        """À COMPLÉTER!
-        Ce constructeur initialise une nouvelle instance de la classe SudokuGrid.
-        Il doit effectuer la conversation de chaque caractère de la chaîne en nombre entier,
-        et lever une exception (ValueError) si elle ne peut pas être interprétée comme une grille de Sudoku.
-        :param initial_values_str: Une chaîne de caractères contenant **exactement 81 chiffres allant de 0 à 9**,
-            où ``0`` indique une case vide
-        :type initial_values_str: str
-        """
-        raise NotImplementedError()
-
+	L = []
+        for i in range(ln(initial_values_str)):
+                try:
+                         int(initial_values_str[i])<10 and int(initial_values_str[i])>=0:
+                                L.append(int(initial_values_str[i]))
+                except:
+                        raise ValueError("Ne peut pas être converti en grille")
+                        break
     @staticmethod
     def from_file(filename, line):
         """À COMPLÉTER!
