@@ -14,8 +14,15 @@ class SudokuGrid:
             où ``0`` indique une case vide
         :type initial_values_str: str
         """
-		
-        raise NotImplementedError()
+
+	L = []
+        for i in range(ln(initial_values_str)):
+                try:
+                         int(initial_values_str[i])<10 and int(initial_values_str[i])>=0:
+                                L.append(int(initial_values_str[i]))
+                except:
+                        raise ValueError("Ne peut pas être converti en grille")
+                        break
 
     @staticmethod
     def from_file(filename, line):
